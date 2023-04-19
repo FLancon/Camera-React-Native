@@ -1,28 +1,58 @@
-import { StyleSheet } from "react-native";
+import "react-native-gesture-handler";
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomePage from "./pages/HomePage"
-import DetailsPage from "./pages/DetailsPage"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const PlaceholderImage = require("/assets/images/Banner.jpeg");
+import HomeScreen from "./pages/HomeScreen";
+import DetailsScreen from "./pages/DetailScreen";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
+      <Tab.Navigator
+        initialRouteName="News"
+        screenOptions={{
+          tabBarStyle: {
+            position: "absolute",
+            backgroundColor: "rgba(0,0,0,0) 0%",
+            border: "none",
+          },
+          tabBarLabelPosition: "below-icon",
+        }}
+      >
+        <Tab.Screen
           name="Home"
-          component={HomePage}
-          options={{ title: "Overview" }}
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
         />
-        <Stack.Screen name="Details" label="ah" component={DetailsPage} />
-      </Stack.Navigator>
+        <Tab.Screen
+          name="News"
+          component={DetailsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="Event"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="Alerte Generale"
+          component={DetailsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
- 
-});
+export default App;

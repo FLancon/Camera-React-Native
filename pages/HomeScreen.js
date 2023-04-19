@@ -1,8 +1,13 @@
 import { StyleSheet, View, Text, Image } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View style={styles.container} >
+      <Image
+          source={require("/assets/images/logo.png")}
+          style={styles.logo}
+        />
       <Text style={styles.title}>BIENVENUE A Ville Sur Mer</Text>
       <View style={styles.imageContainer}>
         <Image
@@ -26,35 +31,40 @@ export default function HomeScreen({ navigation }) {
           Bon dans le doute, voici un outil de signalisation d'incivilté:
         </Text>
       </View>
-
-      <Text onPress={() => navigation.navigate("Details")}>Hello You</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#25292e",
-        alignItems: "center",
-      },
-      imageContainer: {
-        flex: 1,
-        paddingTop: 28,
-      },
-      image: {
-        width: 400,
-        height: 200,
-        borderBottomStartRadius: 19,
-        borderBottomEndRadius: 19,
-      },
-      footerContainer: {
-        flex: 1 / 3,
-        alignItems: "center",
-      },
-      title: {
-        paddingTop: 28,
-        fontWeight: "bold",
-        fontSize: 20,
-      }
+
+  container: {
+    flex: 1,
+    backgroundColor: '#efefef',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+    paddingTop: 28,
+  },
+  image: {
+    width: 400,
+    height: 200,
+    borderBottomStartRadius: 19,
+    borderBottomEndRadius: 19,
+  },
+  logo: {
+    height: 100,
+    width: 150
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: "center",
+  },
+  title: {
+    alignItems: "center",
+    paddingTop: 10,
+    fontWeight: "bold",
+    fontSize: 20,
+  },
 });
