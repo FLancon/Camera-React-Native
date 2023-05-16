@@ -28,7 +28,7 @@ export default function HomeScreen() {
         />
 
         <Text style={{ fontSize: 10, justifyContent: "center", margin: 25 }}>
-          Bon dans le doute, voici un outil de signalisation d'incivilté:
+          Bon dans le doute, un outil de signalisation d'incivilit est disponible dans le menu:
         </Text>
       </View>
     </View>
