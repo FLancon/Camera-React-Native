@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "./pages/HomeScreen";
 import DetailsScreen from "./pages/DetailScreen";
+import { Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="News"
+        initialRouteName="Home"
         screenOptions={{
           tabBarStyle: {
             position: "absolute",
@@ -27,27 +28,19 @@ function App() {
           component={HomeScreen}
           options={{
             headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="home" color={color} size={size} />
+            ),
           }}
         />
         <Tab.Screen
-          name="News"
+          name="Alert"
           component={DetailsScreen}
           options={{
             headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="Event"
-          component={HomeScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="Alerte Generale"
-          component={DetailsScreen}
-          options={{
-            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="md-alert-circle-outline" color={color} size={size}/>
+            ),
           }}
         />
       </Tab.Navigator>
