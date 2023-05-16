@@ -4,16 +4,10 @@ import { LinearGradient } from "expo-linear-gradient";
 export default function HomeScreen() {
   return (
     <View style={styles.container} >
-      <Image
-          source={require("/assets/images/logo.png")}
-          style={styles.logo}
-        />
+      {/*<Image source={require("/assets/images/logo.png")} style={styles.logo} />*/}
       <Text style={styles.title}>BIENVENUE A Ville Sur Mer</Text>
       <View style={styles.imageContainer}>
-        <Image
-          source={require("/assets/images/Banner.jpeg")}
-          style={styles.image}
-        />
+        {/*<Image source={require("/assets/images/Banner.jpeg")} style={styles.image} />*/}
 
         <Text style={{ justifyContent: "center", margin: 25 }}>
           Bienvenue dans cette chère bourgade de Ville Sur Mer, Tout le monde
